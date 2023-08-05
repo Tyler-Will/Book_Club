@@ -3,7 +3,9 @@ import './App.css';
 import Navbar from './Mainstay Components/Navbar';
 import Home from './Home';
 import Bookshelf from './Bookshelf';
+//import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+
 function App() {
   return (
       <BrowserRouter>
