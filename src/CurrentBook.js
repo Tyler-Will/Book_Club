@@ -22,7 +22,7 @@ const CurrentBook = () => {
         <Dropdown.Item>By Isamu Nitta</Dropdown.Item>
         {/*Synopsis*/}
         <h3>Synopsis</h3>
-        <Dropdown.Item>AAAAAA I AM LITERALLY LOSING MY MIND SOMEONE PLEASE HELP ME OH NO HOLY SHIT I LITERALLY CANNOT OH SJIT OH JESUS OH FUCK AAAAAAAAAAAFSGEEUSRSII44II4I4III4I4I7O7O757OE5O75EO7E</Dropdown.Item>
+        <Dropdown.Item>AAAAAA</Dropdown.Item>
         <h3>Data</h3>
         <ListGroup>
       <ListGroup.Item>Page Count:</ListGroup.Item>
