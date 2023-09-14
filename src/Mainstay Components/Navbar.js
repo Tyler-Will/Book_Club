@@ -9,6 +9,7 @@ const Navbar = () => {
                 <a className="button" href="/Calendar">Updates</a>
                 <a className="button" href="/Pester">Pester Me</a>
                 <a className="button" href="/ToDo">To-Do-List</a>
+                <a className="button" href="/Admin">Admin</a>
             </div>
         </nav>
      );

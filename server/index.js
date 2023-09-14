@@ -6,11 +6,25 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Sup')
+})
+
 //ROUTES//
 
 //Add a Book//
 
 //Show all Books//
+app.get("/books", async(req, res) => {
+    try {
+        const showBooks = await pool.query("SELECT * FROM books");
+        res.json(showBooks.rows)
+    } catch (err) {
+        console.error(err.message)
+    }
+});
+
+
 
 //Show a Book//
 
