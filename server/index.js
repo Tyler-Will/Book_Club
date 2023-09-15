@@ -26,8 +26,17 @@ app.get("/books", async(req, res) => {
 
 
 
-//Show a Book//
-
+//Show Current Book//
+app.get("/current/:bookStatus", async(req, res) => {
+    const { bookStatus }= req.params
+    console.log(bookStatus)
+    try {
+        const currentBook = await pool.query("SELECT * FROM books WHERE book_status = $1", [bookStatus]);
+        res.json(currentBook.rows)
+    } catch (err) {
+        console.error(err.message)
+    }
+});
 //Update a Book//
 
 //Delete a Book//

@@ -11,7 +11,8 @@ CREATE TABLE books(
     host_name VARCHAR(40),
     additional_reading VARCHAR(5000),
     discussion_topic VARCHAR(1000),
-    book_status VARCHAR(1000)
+    book_status VARCHAR(1000),
+    read_date VARCHAR
     
        
 );

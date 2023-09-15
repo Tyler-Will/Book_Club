@@ -1,6 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+//useEffect is needed to prevent fetch request from running more than once. See below.
+import {useEffect} from 'react';
+
 
 const Admin =() => {
+
+    const getBook = async () => {
+        const bookStatus = 'Reading'
+        try {
+          const response = await fetch(`http://localhost:5000/current/${bookStatus}`)
+          const json = await response.json()
+          console.log(json)
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    
+      useEffect(() => getBook, [])
+
     return (
         <div>
             <form>

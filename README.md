@@ -7,9 +7,9 @@ Other goals for the project after basic functionality has been achieved will inc
 
 
 ### To-Do-List (User)
--Basic layout for Bookshelf
--Basic Layout for Home Page
--Connectivity with Database
+-Additional styling and formatting.
+-Some way of submitting books for approval.
+-For some reason hyperlinks are not displaying on the Homepage and Bookshelf. Might be a Bootstrap issue.
 
 ### To-Do-List (Admin)
 -Not yet Started
@@ -20,35 +20,9 @@ Other goals for the project after basic functionality has been achieved will inc
 -Added Bootstrap to project and finished basic layout for "CurrentBook" component.
 -Next step, the Bookshelf.
 8/04/2023
+-Basic Bookshelf layout complete.
+-Books table is almost fully connected to frontend. Current Month's Book can be seen on the homepage. Previously read as well as current books can be looked at via the Bookshelf.
+9/14/2023
 
-
-### Acknowledgments
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-
-
-
-### Code Splitting
-
-
-
-### Analyzing the Bundle Size
-
-
-
-### Making a Progressive Web App
-
-
-
-### Advanced Configuration
-
-
-
-### Deployment
-
-
-
-### `npm run build` fails to minify
 
 
