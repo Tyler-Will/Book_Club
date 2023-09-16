@@ -28,7 +28,7 @@ const Admin =(props) => {
     
     return(
         <div>
-          <h2>Previously Read Books</h2>
+          <h2>Records</h2>
         {SortedBooks?.map((Showbooks) => <Catalog key={Showbooks.book_id} Showbooks={Showbooks}/>)}
         </div>
     )
