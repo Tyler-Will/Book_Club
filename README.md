@@ -12,7 +12,9 @@ Other goals for the project after basic functionality has been achieved will inc
 -For some reason hyperlinks are not displaying on the Homepage and Bookshelf. Might be a Bootstrap issue.
 
 ### To-Do-List (Admin)
--Not yet Started
+-Books table is accessible from and visible on Admin Page but data can only be viewed at the moment.
+-Page is meant to resemble a SQL Table but with a more wieldy interface. This will allow the Admin to update and add books without utilizing the Database directly.
+9/15/2023
 
 
 ### Changelog
