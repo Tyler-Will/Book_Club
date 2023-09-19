@@ -1,10 +1,33 @@
 import Table from 'react-bootstrap/Table';
+import { useState } from 'react';
 
 
 function Catalog({Showbooks}) {
+    const [data, setData] = useState({
+        book_isbn: "",
+        book_title: "",
+        book_author: "",
+        book_synopsis: "",
+        page_count: "",
+        book_year: "",
+        host_name: "",
+        additional_reading: "",
+        discussion_topic: "",
+        book_status: "",
+        read_date: ""
+    })
     
-    const handleChange = () => {
-        console.log('changing!')
+    const handleChange = (e) => {
+        //console.log('changing!', e)
+        const {name, value} = e.target
+
+        setData(data => ({
+        ...data,
+        [name] : value
+    }))
+
+    console.log(data)
+
     }
     
   return (
@@ -31,48 +54,48 @@ function Catalog({Showbooks}) {
         <tr>
           <td>{Showbooks.book_id}</td>
           <td>
-            <input maxLength={40} type="text" id="BookName" 
-          defaultValue={Showbooks.book_isbn} onChange={handleChange}>
+            <input maxLength={40} type="text" id="BookISBN" 
+          defaultValue={Showbooks.book_isbn} value={data.isbn} onChange={handleChange}>
             </input>
             </td>
              <td>
-            <input required maxLength={100} type="text" id="BookName" 
+            <input required maxLength={100} type="text" id="BookTitle" 
             defaultValue={Showbooks.book_title} onChange={handleChange}>
             </input>
             </td>
-          <td><input required maxLength={100} type="text" id="BookName"
+          <td><input required maxLength={100} type="text" id="BookAuthor"
            defaultValue={Showbooks.book_author} onChange={handleChange}>
             </input>
             </td>
-          <td><input required maxLength={1000} type="text" id="BookName" 
+          <td><input required maxLength={1000} type="text" id="BookSynopsis" 
           defaultValue={Showbooks.book_synopsis} onChange={handleChange}>
             </input>
             </td>
-          <td><input required maxLength={10} type="number" id="BookName" 
+          <td><input required maxLength={10} type="number" id="BookPageCount" 
           defaultValue={Showbooks.page_count} onChange={handleChange}>
             </input>
             </td>
-          <td><input maxLength={6} type="text" id="BookName" 
+          <td><input maxLength={6} type="text" id="BookYear" 
           defaultValue={Showbooks.book_year}>
             </input>
             </td>
-          <td><input required maxLength={40} type="text" id="BookName" 
+          <td><input required maxLength={40} type="text" id="HostName" 
           defaultValue={Showbooks.host_name} onChange={handleChange}>
             </input>
             </td>
-          <td><input maxLength={1000} type="text" id="BookName" 
+          <td><input maxLength={1000} type="text" id="AdditionalReading" 
           defaultValue={Showbooks.additional_reading} onChange={handleChange}>
             </input>
             </td>
-          <td><input maxLength={1000} type="text" id="BookName" 
+          <td><input maxLength={1000} type="text" id="DiscussionTopic" 
           defaultValue={Showbooks.discussion_topic} onChange={handleChange}>
             </input>
             </td>
-          <td><input required maxLength={1000} type="text" id="BookName" 
+          <td><input required maxLength={1000} type="text" id="BookStatus" 
           defaultValue={Showbooks.book_status} onChange={handleChange}>
             </input>
             </td>
-          <td><input type="text" id="BookName" 
+          <td><input type="text" id="ReadDate" 
           defaultValue={Showbooks.read_date} onChange={handleChange}>
             </input>
             </td>
