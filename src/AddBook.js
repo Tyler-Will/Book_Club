@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Collapse from 'react-bootstrap/Collapse';
 
 const AddBook = () => {
     //These variables should match the ones in your routes if possible.
@@ -16,6 +17,8 @@ const AddBook = () => {
     const [book_status, setStatus] = useState("")
     const [read_date, setDate] = useState("")
 
+    const [open, setOpen] = useState(false);
+
     const onsubmitForm = async e => {
         e.preventDefault();
         try {
@@ -29,11 +32,22 @@ const AddBook = () => {
         } catch (err) {
         console.error(err.message)  
         }
+
     }
 
     return (
         <Fragment>
-            <h4>Want to add a new book?</h4>
+
+<>
+      <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        <h4>Would you Like to Add a New Book?</h4>
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
         <Form onSubmit={onsubmitForm}>
       <Form.Group className="mb-3" controlId="text">
         <Form.Label>book_isbn</Form.Label>
@@ -89,6 +103,11 @@ const AddBook = () => {
         Submit
       </Button>
     </Form>
+
+    </div>
+      </Collapse>
+    </>
+
         </Fragment>
     )
 }

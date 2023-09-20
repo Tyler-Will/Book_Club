@@ -6,6 +6,20 @@ import Table from 'react-bootstrap/Table';
 const Admin =() => {
   const [Showbooks, setBooks] = useState([]);
 
+  ///Delete Book Function
+const deleteBook = async (book_id) => 
+{try {
+  const deleteBook = await fetch(`http://localhost:5000/books/${book_id}`, {
+    method: "DELETE"
+  });
+
+  setBooks(Showbooks.filter(Showbooks => Showbooks.book_id != book_id));
+} catch (err) {
+  console.error(err.message)
+}
+}
+  ///
+
     const getBooks = async () => {
       try {
       const response = await fetch("http://localhost:5000/books");
@@ -23,11 +37,14 @@ const Admin =() => {
     
 return (
   <Fragment>
+    <h2>Welcome to the Administrator's Records</h2>
     <AddBook />
     {" "}
+    
   <Table striped bordered hover variant="dark">
       <thead>
         <tr>
+          
           <th>book_isbn</th>
           <th>book_title</th>
           <th>book_author</th>
@@ -45,7 +62,7 @@ return (
       </thead>
       <tbody>
         {Showbooks.map(Showbooks=>
-        <tr>
+        <tr key={Showbooks.book_id}>
           <td>
             <td>
               
@@ -96,7 +113,7 @@ return (
             </input>
             </td>
             <td><button>Save</button></td>
-          <td><button >Delete</button></td>
+          <td><button className='btn btn-danger' onClick={() => deleteBook(Showbooks.book_id)}>Delete</button></td>
         </tr>
        )}
       </tbody>
