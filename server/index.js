@@ -53,7 +53,7 @@ app.get("/books/:book_id", async(req, res) => {
 //Add a Book//
 app.post("/books", async(req, res) => {
     try {
-        const {} = req.body;
+        const {book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date} = req.body;
         const newBook = await pool.query("INSERT INTO books (book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", 
         [book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date]);
 

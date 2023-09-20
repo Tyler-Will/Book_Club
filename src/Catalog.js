@@ -15,6 +15,7 @@ function Catalog({Showbooks}) {
         discussion_topic: "",
         book_status: "",
         read_date: ""
+
     })
     
     const handleChange = (e) => {
@@ -24,6 +25,8 @@ function Catalog({Showbooks}) {
         setData(data => ({
         ...data,
         [name] : value
+
+    
     }))
 
     console.log(data)
@@ -46,13 +49,12 @@ function Catalog({Showbooks}) {
           <th>discussion_topic</th>
           <th>book_status</th>
           <th>read_date</th>
-          <th>Save Changes?</th>
-          <th>DELETE BOOK?</th>
+          <th>Save Changes To This Book?</th>
+          <th>DELETE THIS BOOK?</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{Showbooks.book_id}</td>
           <td>
             <input maxLength={40} type="text" id="BookISBN" 
           defaultValue={Showbooks.book_isbn} value={data.isbn} onChange={handleChange}>
@@ -99,8 +101,8 @@ function Catalog({Showbooks}) {
           defaultValue={Showbooks.read_date} onChange={handleChange}>
             </input>
             </td>
-          <td><button>Edit</button></td>
-          <td><button>Delete</button></td>
+            <td><button>Save</button></td>
+          <td><button >Delete</button></td>
         </tr>
        
       </tbody>
