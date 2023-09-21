@@ -51,46 +51,46 @@ const AddBook = () => {
         <Form onSubmit={onsubmitForm}>
       <Form.Group className="mb-3" controlId="text">
         <Form.Label>book_isbn</Form.Label>
-        <Form.Control type="text" placeholder="Max 40 characters" value={book_isbn} onChange={e => setISBN(e.target.value)}/>
+        <Form.Control maxLength={40} type="text" placeholder="Max 40 characters" value={book_isbn} onChange={e => setISBN(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
-        <Form.Label>book_title</Form.Label>
-        <Form.Control type="text" placeholder="Max 100 characters" value={book_title} onChange={e => setTitle(e.target.value)}/>
+        <Form.Label >book_title</Form.Label>
+        <Form.Control required maxLength={100} type="text" placeholder="Max 100 characters" value={book_title} onChange={e => setTitle(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
-      <Form.Label>book_author</Form.Label>
-        <Form.Control type="text" placeholder="Max 100 characters" value={book_author} onChange={e => setAuthor(e.target.value)}/>
+      <Form.Label >book_author</Form.Label>
+        <Form.Control required maxLength={100} type="text" placeholder="Max 100 characters" value={book_author} onChange={e => setAuthor(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="textarea">
       <Form.Label>book_synopsis</Form.Label>
       <br></br>
-      <textarea value={book_synopsis} onChange={e => setSynopsis(e.target.value)} rows="4" cols="50"></textarea>
+      <textarea required maxLength={1000} value={book_synopsis} onChange={e => setSynopsis(e.target.value)} rows="4" cols="50"></textarea>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>page_count</Form.Label>
-        <Form.Control type="text" placeholder="Max 10 characters" value={page_count} onChange={e => setPages(e.target.value)}/>
+        <Form.Control required maxLength={10} type="text" placeholder="Max 10 characters" value={page_count} onChange={e => setPages(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>book_year</Form.Label>
-        <Form.Control type="text" placeholder="Max 6 characters" value={book_year} onChange={e => setYear(e.target.value)}/>
+        <Form.Control maxLength={6} type="text" placeholder="Max 6 characters" value={book_year} onChange={e => setYear(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>host_name</Form.Label>
-        <Form.Control type="text" placeholder="Max 40 characters" value={host_name} onChange={e => setHost(e.target.value)}/>
+        <Form.Control required maxLength={40} type="text" placeholder="Max 40 characters" value={host_name} onChange={e => setHost(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>additional_reading</Form.Label>
       <br></br>
-      <textarea value={additional_reading} onChange={e => setAdd(e.target.value)}rows="4" cols="50"></textarea>
+      <textarea maxLength={1000} value={additional_reading} onChange={e => setAdd(e.target.value)}rows="4" cols="50"></textarea>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>discussion_topic</Form.Label>
-        <Form.Control type="text" placeholder="Max 1000 characters" value={discussion_topic} onChange={e => setDiscussion(e.target.value)}/>
+        <Form.Control maxLength={1000} type="text" placeholder="Max 1000 characters" value={discussion_topic} onChange={e => setDiscussion(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>book_status</Form.Label>
       <br></br>
-      <select value={book_status} onChange={e => setStatus(e.target.value)} id="book_status">
+      <select required value={book_status} onChange={e => setStatus(e.target.value)} id="book_status">
             <option></option>
             <option value="Reading">Reading</option>
             <option value="Finished">Finished</option>
