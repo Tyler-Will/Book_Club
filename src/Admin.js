@@ -1,5 +1,6 @@
 
 import AddBook from './AddBook';
+import EditBook from './EditBook';
 import {Fragment, useEffect, useState} from 'react';
 import Table from 'react-bootstrap/Table';
 
@@ -112,7 +113,7 @@ return (
           defaultValue={Showbooks.read_date}>
             </input>
             </td>
-            <td><button>Save</button></td>
+            <td><button><EditBook /></button></td>
           <td><button className='btn btn-danger' onClick={() => deleteBook(Showbooks.book_id)}>Delete</button></td>
         </tr>
        )}
