@@ -1,29 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/*{
+    outline: 1px solid red;
+    }*/
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
 
+/**/
+/*Title*/
 .Title {
+  text-align: center;
   color: rebeccapurple;
   background-color: black;
   margin: auto;
-  width: 50%;
+  width: 100%;
   padding: 10px;
 }
+/****************Navbar********************/
+.navbar {
+  background-color: rgba(250, 250, 228, 0.938);
+    padding: 10px;
+    /*padding-left: 478px;*/
+}
+
+.links{
+  margin: auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.6em;
+  color: green;
+  margin-right: 25px;
+}
+
+nav a:hover {
+  color: darkred;
+}
+/**************************************/
 
 .button {
   margin-left: 50px;
 }
 
-.BookTitle {
-  font-style: ;
+
+.flexbox-container{
+  
+}
+/*Home and CurrentBook **************/
+/*Home.js*/
+.HomeBody {
+  background-color: rgb(129, 21, 21);
+  display: flex;
+}
+/****************/
+
+container {
+  text-align: center;
+  outline: 1px black;
+    min-height: 60vh;
+    flex-grow: 5;
+    /*background-color: black;*/
+    z-index: 3;
+}
+.BookContainer {
+  color: aliceblue;
+  max-width: 50%;
+  margin:auto;
+  outline: 1px black;
+  min-height: 60vh;
+  flex-grow: 5;
+  background-color: black;
+  z-index: 3;
+}
+/* */
+
+
+/*Sidebars*/
+.left, .right{
+  outline: 1px solid rgb(253, 252, 252);
+  background-color: black;
+  /*flex-grow: 1;*/
+  min-height: 100vh;
+  /*width: 3%;*/
+  width: 20vh;
+  z-index: 3;
 }

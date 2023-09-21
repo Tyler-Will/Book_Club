@@ -20,7 +20,7 @@ const BookShelfItem = ({Showbooks}) => {
         <Dropdown.Item className="BookTitle">
             {Showbooks.book_title}
             </Dropdown.Item>
-        <Dropdown.Item><img src={test2} /></Dropdown.Item>
+        <Dropdown.Item><img src={Showbooks.book_image} /></Dropdown.Item>
         <Dropdown.Item>By {Showbooks.book_author}</Dropdown.Item>
         {/*Synopsis*/}
         <h3>Synopsis</h3>

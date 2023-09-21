@@ -25,7 +25,7 @@ Other goals for the project after basic functionality has been achieved will inc
 -Basic Bookshelf layout complete.
 -Books table is almost fully connected to frontend. Current Month's Book can be seen on the homepage. Previously read as well as current books can be looked at via the Bookshelf.
 9/14/2023
--Admin Page is done as far as CRUD operations for books are concerned. Next step will be adding the ability to edit fluid information or information unrelated to specific books (Deadlines, Buying options, debating whether book covers should go here.)
+-Admin Page is done as far as CRUD operations for books are concerned. <del>Next step will be adding the ability to edit fluid information or information unrelated to specific books (Deadlines, Buying options, debating whether book covers should go here.)</del>This is a stupid idea and has no tangible benefit for a project this small besides potentially making the code messier.
 9/21/2023
 
 

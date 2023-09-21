@@ -1,8 +1,10 @@
-
+import { Fragment } from "react";
+import '../index.css';
 const Navbar = () => {
-    return ( 
-        <nav className="navbar">
+    return (
+        <Fragment>
             <h1 className="Title">Followers of Anansi</h1>
+        <nav className="navbar">
             <div className="links">
                 <a className="button" href="/">Home</a>
                 <a className="button" href="/Bookshelf">Bookshelf</a>
@@ -12,6 +14,7 @@ const Navbar = () => {
                 <a className="button" href="/Admin">Admin</a>
             </div>
         </nav>
+        </Fragment> 
      );
 }
  

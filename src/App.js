@@ -8,11 +8,13 @@ import Admin from './Admin';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 //useEffect is needed to prevent fetch request from running more than once. See below.
 import {useEffect} from 'react';
+import Marquee from './Mainstay Components/Marquee';
 
 function App() {
 
   return (
       <BrowserRouter>
+       <Marquee />
       <Navbar />
         <Routes>
       <Route path ="/" element={<Home />} />

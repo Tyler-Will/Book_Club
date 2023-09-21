@@ -12,7 +12,13 @@ CREATE TABLE books(
     additional_reading VARCHAR(5000),
     discussion_topic VARCHAR(1000),
     book_status VARCHAR(1000),
-    read_date VARCHAR
+    read_date VARCHAR,
+    book_image VARBINARY(MAX),
+    purchasing VARCHAR(160),
+    deadline VARCHAR(15),
+    quote VARCHAR(280),
+    marquee VARCHAR(280),
+    downloading VARCHAR(160),
     
        
 );
