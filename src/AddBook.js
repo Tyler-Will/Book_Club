@@ -91,8 +91,9 @@ const AddBook = () => {
       <Form.Label>book_status</Form.Label>
       <br></br>
       <select value={book_status} onChange={e => setStatus(e.target.value)} id="book_status">
-            <option value="volvo">Reading</option>
-            <option value="saab">Finished</option>
+            <option></option>
+            <option value="Reading">Reading</option>
+            <option value="Finished">Finished</option>
         </select>
       </Form.Group>
       <Form.Group className="mb-3" controlId="text">
