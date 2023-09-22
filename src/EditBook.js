@@ -23,13 +23,19 @@ const EditBook = ({Showbooks}) => {
   const [discussion_topic, setDiscussion] = useState(Showbooks.discussion_topic)
   const [book_status, setStatus] = useState(Showbooks.book_status)
   const [read_date, setDate] = useState(Showbooks.read_date)
+  const [book_image, setImage] = useState(Showbooks.book_image)
+  const [purchasing, setPurchase] = useState(Showbooks.purchasing)
+  const [deadline, setDeadline] = useState(Showbooks.Deadline)
+  const [quote, setQuote] = useState(Showbooks.quote)
+  const [marquee, setMarquee] = useState(Showbooks.marquee)
+  const [downloading, setDownloading] = useState(Showbooks.downloading)
   //
 
   ///Edit Book Function
   const SubmitChanges = async e => {
     e.preventDefault();
     try {
-        const body ={book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date};
+        const body ={book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_image, purchasing, deadline, quote, marquee, downloading };
         const response = await fetch(`http://localhost:5000/books/${Showbooks.book_id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
@@ -94,6 +100,18 @@ const EditBook = ({Showbooks}) => {
           <label>read_date</label>
           <input type="text" className="form-control" value={read_date}  onChange={e => setDate(e.target.value)}/>
 
+          <label>book_image</label>
+             <input type="text" className="form-control" value={book_image}  onChange={e => setImage(e.target.value)}/>
+          <label>purchasing</label>
+             <input type="text" className="form-control" value={purchasing}  onChange={e => setPurchase(e.target.value)}/>
+          <label>deadline</label>
+            <input type="text" className="form-control" value={deadline}  onChange={e => setDeadline(e.target.value)}/>
+          <label>quote</label>
+            <input type="text" className="form-control" value={quote}  onChange={e => setQuote(e.target.value)}/>
+          <label>marquee</label>
+            <input type="text" className="form-control" value={marquee}  onChange={e => setMarquee(e.target.value)}/>
+          <label>downloading</label>
+            <input type="text" className="form-control" value={downloading}  onChange={e => setDownloading(e.target.value)}/>
   </Modal.Body>
   <Modal.Footer>
     <Button variant="secondary" onClick={handleClose}>

@@ -53,9 +53,9 @@ app.get("/books/:book_id", async(req, res) => {
 //Add a Book//
 app.post("/books", async(req, res) => {
     try {
-        const {book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date} = req.body;
-        const newBook = await pool.query("INSERT INTO books (book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", 
-        [book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date]);
+        const {book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_image, purchasing, deadline, quote, marquee, downloading} = req.body;
+        const newBook = await pool.query("INSERT INTO books (book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date,book_image, purchasing, deadline, quote, marquee, downloading) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14,$15,$16,$17)", 
+        [book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date,book_image, purchasing, deadline, quote, marquee, downloading]);
 
         res.json(newBook.rows[0])
     } catch (err) {
@@ -67,8 +67,8 @@ app.post("/books", async(req, res) => {
 app.put("/books/:book_id", async (req, res) => {
     try {
         const {book_id} = req.params;
-        const {book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date} = req.body;
-        const updateBook = await pool.query("UPDATE books SET book_isbn = $1, book_title = $2, book_author = $3, book_synopsis = $4, page_count = $5, book_year = $6, host_name = $7, additional_reading = $8, discussion_topic = $9, book_status = $10, read_date = $11 WHERE book_id = $12", [book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_id]
+        const {book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_image, purchasing, deadline, quote, marquee, downloading} = req.body;
+        const updateBook = await pool.query("UPDATE books SET book_isbn = $1, book_title = $2, book_author = $3, book_synopsis = $4, page_count = $5, book_year = $6, host_name = $7, additional_reading = $8, discussion_topic = $9, book_status = $10, read_date = $11, book_image = $12, purchasing = $13, deadline = $14, quote = $15, marquee = $16, downloading =$17 WHERE book_id = $18", [book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_image, purchasing, deadline, quote, marquee, downloading, book_id]
         );
 
         res.json("Book updated!");

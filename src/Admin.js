@@ -59,6 +59,11 @@ return (
           <th>discussion_topic</th>
           <th>book_status</th>
           <th>read_date</th>
+          <th>book_image</th> <th>purchasing</th> 
+          <th>deadline</th> 
+          <th>quote</th>
+          <th>marquee</th>
+          <th>downloading</th>  
           <th>Make Changes To This Book?</th>
           <th>DELETE THIS BOOK?</th>
         </tr>
@@ -103,6 +108,30 @@ return (
             </p>
             </td>
           <td><p>{Showbooks.read_date}
+            </p>
+            </td>
+            <td>
+            <p>{Showbooks.book_image}
+            </p>
+            </td>
+          <td class>
+            <p class="text-truncate">{Showbooks.purchasing}
+            </p>
+            </td>
+          <td><p>
+            {Showbooks.deadline}
+            </p>
+            </td>
+            <td>
+            <p>{Showbooks.quote}
+            </p>
+            </td>
+          <td class>
+            <p class="text-truncate">{Showbooks.marquee}
+            </p>
+            </td>
+          <td><p class="text-truncate">
+            {Showbooks.downloading}
             </p>
             </td>
             <td><EditBook Showbooks={Showbooks}/></td>

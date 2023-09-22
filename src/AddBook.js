@@ -16,13 +16,19 @@ const AddBook = () => {
     const [discussion_topic, setDiscussion] = useState("")
     const [book_status, setStatus] = useState("")
     const [read_date, setDate] = useState("")
-
+    const [book_image, setImage] = useState("")
+    const [purchasing, setPurchase] = useState("")
+    const [deadline, setDeadline] = useState("")
+    const [quote, setQuote] = useState("")
+    const [marquee, setMarquee] = useState("")
+    const [downloading, setDownloading] = useState("")
+    
     const [open, setOpen] = useState(false);
 
     const onsubmitForm = async e => {
         e.preventDefault();
         try {
-            const body ={book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date};
+            const body ={book_isbn, book_title, book_author, book_synopsis, page_count, book_year, host_name, additional_reading, discussion_topic, book_status, read_date, book_image, purchasing, deadline, quote, marquee, downloading };
             const response = await fetch("http://localhost:5000/books/", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -49,6 +55,7 @@ const AddBook = () => {
       <Collapse in={open}>
         <div id="example-collapse-text">
         <Form onSubmit={onsubmitForm}>
+          <h4>Book Data</h4>
       <Form.Group className="mb-3" controlId="text">
         <Form.Label>book_isbn</Form.Label>
         <Form.Control maxLength={40} type="text" placeholder="Max 40 characters" value={book_isbn} onChange={e => setISBN(e.target.value)}/>
@@ -99,6 +106,32 @@ const AddBook = () => {
       <Form.Group className="mb-3" controlId="text">
       <Form.Label>read_date</Form.Label>
         <Form.Control type="text" placeholder="Format: 00/00" value={read_date} onChange={e => setDate(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Purchase Link</Form.Label>
+        <Form.Control type="text" placeholder="Amazon, Target, etc." value={purchasing} onChange={e => setPurchase(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Download or Webpage Link</Form.Label>
+        <Form.Control type="text" placeholder="Public Domain Books are usually available for free" value={downloading} onChange={e => setDownloading(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Image Link</Form.Label>
+        <Form.Control type="text" placeholder="Preferably the book's cover" value={book_image} onChange={e => setImage(e.target.value)}/>
+      </Form.Group>
+      
+      <h4>Miscellaneous Data</h4>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Deadline</Form.Label>
+        <Form.Control type="text" placeholder="Amazon, Target, etc." value={deadline} onChange={e => setDeadline(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Favorite Quote From the Book</Form.Label>
+        <Form.Control type="text" placeholder="Something something..." value={quote} onChange={e => setQuote(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="text">
+      <Form.Label>Marquee</Form.Label>
+        <Form.Control type="text" placeholder="Preferably the book's cover" value={marquee} onChange={e => setMarquee(e.target.value)}/>
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit
