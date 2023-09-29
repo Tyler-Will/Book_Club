@@ -1,5 +1,6 @@
-
+import { Fragment } from "react";
 import CurrentBook from "./CurrentBook";
+import Marquee from "./Mainstay Components/MarqueeMessage";
 import './index.css';
 //useEffect is needed to prevent fetch request from running more than once. See below.
 import {useEffect, useState} from 'react';
@@ -31,7 +32,7 @@ const Home = (props) => {
     return (
         <div className="HomeBody">
         {BookofMonth?.map((ShowCurrentBook) => <CurrentBook key={ShowCurrentBook.book_id} ShowCurrentBook={ShowCurrentBook}/>)}
-        </div>
+        </div> 
     )
 }
 

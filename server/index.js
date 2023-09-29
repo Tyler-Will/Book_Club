@@ -1,3 +1,10 @@
+//
+//import { Jwt } from "jsonwebtoken";
+//import bcrypt from 'bcrypt'
+//import cookieParser from "cookie-parser";
+//
+
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -5,6 +12,7 @@ const pool = require("./db");
 //middleware
 app.use(cors());
 app.use(express.json());
+//app.use(cookieParser());
 
 app.get('/', (req, res) => {
     res.send('Sup')

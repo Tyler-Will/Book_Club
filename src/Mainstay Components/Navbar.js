@@ -3,7 +3,9 @@ import '../index.css';
 const Navbar = () => {
     return (
         <Fragment>
+            <div className="header">
             <h1 className="Title">Followers of Anansi</h1>
+            </div>
         <nav className="navbar">
             <div className="links">
                 <a className="button" href="/">Home</a>

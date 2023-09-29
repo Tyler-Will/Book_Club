@@ -23,15 +23,6 @@ CREATE TABLE books(
        
 );
 
-CREATE TABLE temporary(
-    temporary_id SERIAL PRIMARY KEY,
-    Purchasing VARCHAR(160),
-    Deadline VARCHAR(15),
-    Quote VARCHAR(280),
-    Marquee VARCHAR(280)
-
-);
-
 CREATE TABLE members (
     user_name VARCHAR(255),
     email VARCHAR(255) PRIMARY KEY,
