@@ -6,15 +6,15 @@ const Navbar = () => {
             <div className="header">
             <h1 className="Title">Followers of Anansi</h1>
             </div>
-        <nav className="navbar">
-            <div className="links">
-                <a className="button" href="/">Home</a>
-                <a className="button" href="/Bookshelf">Bookshelf</a>
-                <a className="button" href="/Calendar">Updates</a>
-                <a className="button" href="/Pester">Pester Me</a>
-                <a className="button" href="/ToDo">To-Do-List</a>
-                <a className="button" href="/Admin">Admin</a>
-            </div>
+        <nav className="navbarBody">
+            <ul className="NavBar">
+                <li className="Navbutton"><a  href="/">Home</a></li>
+                <li className="Navbutton"><a  href="/Bookshelf">Bookshelf</a></li>
+                <li className="Navbutton"><a  href="/Calendar">Updates</a></li>
+                <li className="Navbutton"><a href="/Pester">Pester Me</a></li>
+                <li className="Navbutton"><a href="/ToDo">To-Do-List</a></li>
+                <li className="Navbutton"><a href="/Admin">Admin</a></li>
+            </ul>
         </nav>
         </Fragment> 
      );

@@ -1,8 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import test2 from './Images/test2.jpg';
 import './index.css'
 //useEffect is needed to prevent fetch request from running more than once. See below.
-import {useEffect, useState} from 'react';
 import { Fragment } from "react";
 const CurrentBook = ({ShowCurrentBook}) => {
 
@@ -10,10 +8,12 @@ const CurrentBook = ({ShowCurrentBook}) => {
       <Fragment>
         
          <div class="left">
-         <div>
-            <p className="Quote">This Month's Quote: "{ShowCurrentBook.quote}."</p>
+         <div class="LeftContent">
+            <p className="Quote">This Month's Quote: "{ShowCurrentBook.quote}"</p>
+            <div className="News">
             <h4>Red Hot News</h4>
             <p>This section isn't ready yet. Be patient!</p>
+            </div>
         </div>
          </div>
 
@@ -41,7 +41,7 @@ const CurrentBook = ({ShowCurrentBook}) => {
         <h3>Additional Reading</h3>
         {ShowCurrentBook.additional_reading}
         <h3>Host</h3>
-        Tyler Williams
+        {ShowCurrentBook.host_name}
         <h3>Discussion</h3>
         {ShowCurrentBook.discussion_topic}
         <h3>Deadline</h3>
@@ -49,7 +49,15 @@ const CurrentBook = ({ShowCurrentBook}) => {
         </div>   
         </container>
         <div class="right">
-        <h4>I don't know what to put here...</h4>
+          <div class="RightContent">
+        <h4>You new here? Please, refer to the following</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>About Us</li>
+          <li>Business Inquiries</li>
+          <li>Some More Stuff</li>
+        </ul>
+        </div>
     </div>
     
         </Fragment>
